@@ -1,0 +1,33 @@
+{
+  "name": "protractorcucumber",
+  "version": "1.0.0",
+  "description": "it's cucumber and protractor framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor JSFiles/ProtractorConfig.js",
+    "pretest": "tsc",
+    "protractor": "./node_modules/protractor/built/cli.js",
+    "prestart": "./node_modules/.bin/webdriver-manager update",
+    "start": "./node_modules/.bin/webdriver-manager start",
+    "Webdriver_update": "./node_modules/.bin/webdriver-manager update",
+    "clean": "./node_modules/.bin/webdriver-manager clean"
+  },
+  "author": "Saniya Bhaldar",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cucumber": "^6.0.1",
+    "@types/node": "^14.14.14",
+    "chai": "^4.2.0",
+    "chai-as-promised": "~7.1.1",
+    "cucumber": "^5.1.0",
+    "jasmine-allure-reporter": "^1.0.2",
+    "protractor": "^7.0.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.9.3"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.13.0",
+    "cucumber-html-reporter": "^5.3.0",
+    "protractor-cucumber-framework": "^6.2.1"
+  }
+}
