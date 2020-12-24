@@ -1,7 +1,5 @@
 import { Given, When, Then } from "cucumber";
 import { by, element } from "protractor";
-import { HomePageObjects } from "../../pageObjects/HomePageObjects";
-import { NewOwnerPageObjects } from "../../pageObjects/Owners/NewOwnerPageObjects";
 import { OwnerListPageObjects } from "../../pageObjects/Owners/OwnerListPageObjects";
 import { ViewOwnerPageObjects } from "../../pageObjects/Owners/viewOwnerPageObjects";
 import appTestData from "../../TestData/appTestData";
@@ -12,8 +10,6 @@ const expect = chai.expect;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(70 * 1000);
 
-let homeObj = new HomePageObjects();
-let newOwnerObj = new NewOwnerPageObjects();
 let viewOwnerObj = new ViewOwnerPageObjects();
 let ownerListObj = new OwnerListPageObjects();
 

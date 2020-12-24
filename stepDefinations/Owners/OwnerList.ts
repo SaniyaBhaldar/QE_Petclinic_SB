@@ -1,8 +1,6 @@
 import { Given, When, Then } from "cucumber";
-import { HomePageObjects } from "../../pageObjects/HomePageObjects";
-import { NewOwnerPageObjects } from "../../pageObjects/Owners/NewOwnerPageObjects";
 import { OwnerListPageObjects } from "../../pageObjects/Owners/OwnerListPageObjects";
-import { ViewOwnerPageObjects } from "../../pageObjects/Owners/viewOwnerPageObjects";
+
 
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
@@ -10,9 +8,6 @@ const expect = chai.expect;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(70 * 1000);
 
-let homeObj = new HomePageObjects();
-let newOwnerObj = new NewOwnerPageObjects();
-let viewOwnerObj= new ViewOwnerPageObjects();
 let ownerListObj=new OwnerListPageObjects();
 
 //Scenario 1 : Verify title of the page as 'Owners'
