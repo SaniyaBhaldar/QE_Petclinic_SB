@@ -23,15 +23,15 @@ let ownerListObj = new OwnerListPageObjects();
 });*/
 
 When('User clicks on Peter owner', async function () {
-    let responseList = await ownerListObj.responseList.getText();
-    //await console.log(" responseList : " + responseList);
 
+     //await ownerListObj.ownerName.click();
+     
     let count = await ownerListObj.responseList.all(by.tagName("tr")).count();
     console.log(count);
 
     for (let i = 1; i <= count; i++) {
         let owners = await element(by.xpath("//*[@class='table table-striped']/tbody/tr[" + i + "]/td/a")).getAttribute("innerText");
-        console.log(owners);
+        //console.log(owners);
 
         if (owners == "Peter McTavish") {
             await element(by.xpath("//*[@class='table table-striped']/tbody/tr[" + i + "]/td/a")).click();
@@ -43,7 +43,6 @@ When('User clicks on Peter owner', async function () {
 
     }
 
-    //await ownerListObj.ownerName.click();
 });
 
 Then('User should be navigate on Owners information page', async function () {
