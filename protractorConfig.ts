@@ -20,7 +20,16 @@ exports.config = {
    // baseUrl: ' http://petclinicui.e46708b92c054086909b.eastus.aksapp.io/petclinic/',
   
     capabilities: {
-        browserName:'chrome'
+        browserName:'chrome',
+
+
+      /* browserName:'firefox',
+        'moz:firefoxOptions': {
+         args: [ "--safe-mode" ]*/
+          //args: [ "--headless" ]
+        
+        
+
     },
   
     framework: 'custom',  // set to "custom" instead of cucumber.
