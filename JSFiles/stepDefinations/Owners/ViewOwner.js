@@ -11,8 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const cucumber_1 = require("cucumber");
 const protractor_1 = require("protractor");
-const HomePageObjects_1 = require("../../pageObjects/HomePageObjects");
-const NewOwnerPageObjects_1 = require("../../pageObjects/Owners/NewOwnerPageObjects");
 const OwnerListPageObjects_1 = require("../../pageObjects/Owners/OwnerListPageObjects");
 const viewOwnerPageObjects_1 = require("../../pageObjects/Owners/viewOwnerPageObjects");
 const appTestData_1 = require("../../TestData/appTestData");
@@ -20,8 +18,7 @@ const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(70 * 1000);
-let homeObj = new HomePageObjects_1.HomePageObjects();
-let newOwnerObj = new NewOwnerPageObjects_1.NewOwnerPageObjects();
+
 let viewOwnerObj = new viewOwnerPageObjects_1.ViewOwnerPageObjects();
 let ownerListObj = new OwnerListPageObjects_1.OwnerListPageObjects();
 //Scenario 1 : Verify user is able to navigate to owner information page

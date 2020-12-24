@@ -25,7 +25,7 @@ let ownerListObj = new OwnerListPageObjects();
 When('User clicks on Peter owner', async function () {
 
      //await ownerListObj.ownerName.click();
-     
+
     let count = await ownerListObj.responseList.all(by.tagName("tr")).count();
     console.log(count);
 
