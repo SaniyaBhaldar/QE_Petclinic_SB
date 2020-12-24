@@ -5,11 +5,11 @@ Feature: User going to validate veterinarians tab of Petclinic Application
 
               Given User clicks on veterinarians tab
               When User clicks on All veterinarians option
-              Then veterinarians page title should be displayed
+              Then Veterinarians page title should be displayed
 
        Scenario: Verify count of radiology veterinarians on 'veterinarians' page
 
               Given User is on veterinarians list page
-              Then radiology veterinarians should be displayed
+              Then Radiology veterinarians should be displayed with exact count
 
 
