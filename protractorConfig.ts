@@ -5,7 +5,7 @@ let reporter = require('cucumber-html-reporter');
 
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+let mm = String(today.getMonth() + 1).padStart(2, '0'); 
 let yyyy = today.getFullYear();
 
 let ReportDate = yyyy + '-' + mm + '-' + dd;
@@ -32,7 +32,7 @@ exports.config = {
 
     },
   
-    framework: 'custom',  // set to "custom" instead of cucumber.
+    framework: 'custom',  
   
     frameworkPath: require.resolve('protractor-cucumber-framework'),  // path relative to the current config file
   
