@@ -48,13 +48,11 @@ When('User clicks on Peter owner', async function () {
 Then('User should be navigate on Owners information page', async function () {
     await viewOwnerObj.ownerInfoTitle.isDisplayed().then(async function (result) {
         await expect(true).to.equal(result);
-        console.log("Owner info page displayed");
     });
 });
 
 Then('Able to see Pets and Visits title', async function () {
     let pageTitle = await viewOwnerObj.petsVisitsTitle.getText();
-    await console.log(" Title as : " + pageTitle);
     await expect("Pets and Visits").to.equal(pageTitle);
 
     /*await viewOwnerObj.petsVisitsTitle.isDisplayed().then(async function (result) {
@@ -69,22 +67,18 @@ Then('Able to see Pets and Visits title', async function () {
 Given('User is on Owners Information page', async function () {
     await viewOwnerObj.ownerInfoTitle.isDisplayed().then(async function (result) {
         await expect(true).to.equal(result);
-        console.log("On Owner info page");
     });
 
 });
 
 Then('User pet details Name, Birthdate, Type should displayed', async function () {
     let petName = await viewOwnerObj.petName.getText();
-    console.log("PetName:" + petName);
     await expect(appTestData.appTestData.petDetails.PetName).to.equal(petName);
 
     let petBirthdate = await viewOwnerObj.petBirthdate.getText();
-    console.log("Pet Birthdate:" + petBirthdate);
     await expect(appTestData.appTestData.petDetails.PetBirthdate).to.equal(petBirthdate);
 
     let petType = await viewOwnerObj.petType.getText();
-    console.log("Pet Type:" + petType);
     await expect(appTestData.appTestData.petDetails.PetType).to.equal(petType);
 
 });

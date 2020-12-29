@@ -1,6 +1,5 @@
 import { Given, When, Then } from "cucumber";
 import { HomePageObjects } from "../pageObjects/HomePageObjects";
-import { NewOwnerPageObjects } from "../pageObjects/Owners/NewOwnerPageObjects";
 import { VeterinariansPageObjects } from "../pageObjects/VeterinariansPageObjects";
 
 const chai = require("chai").use(require("chai-as-promised"));
@@ -25,7 +24,6 @@ When('User clicks on All veterinarians option', async function () {
 Then('Veterinarians page title should be displayed', async function () {
     await veterinariansObj.pageTitle.isDisplayed().then(async function (result) {
         await expect(true).to.equal(result);
-        console.log("veterinarians page title get displayed")
     });
 });
 
@@ -38,9 +36,8 @@ Given('User is on veterinarians list page', async function () {
 
 Then('Radiology veterinarians should be displayed with exact count', async function () {
     let vetList= await veterinariansObj.responseVetList.getText();
-
     let count=(vetList.match(/radiology/g)).length;
-    console.log("Count of radiology vets:"+count);
+    //console.log("Count of radiology vets:"+count);
     await expect("3").to.equal(count);
 
 });
