@@ -43,7 +43,7 @@ exports.config = {
        // '../features/Owners/viewOwner.feature',
         '../features/veterinarians.feature',
 
-        //'../features/petTypes.feature'    // Specs here are the cucumber feature files
+       // '../features/petTypes.feature'    // Specs here are the cucumber feature files
     ],
 
     cucumberOpts: {
@@ -59,9 +59,10 @@ exports.config = {
         ]
       },
     
-      onPrepare: () => {
+      onPrepare: async () => {
     
         browser.driver.manage().window().maximize();
+        await browser.waitForAngularEnabled(false);
       },
 
       onComplete: () => {
