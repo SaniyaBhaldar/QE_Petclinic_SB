@@ -6,6 +6,10 @@ Before(async function () {
 });
 
 After(async function (scenario) {
+  
+  if(scenario.result.status==="failed"){
   const screenshot = await browser.takeScreenshot();
   this.attach(screenshot, "image/png")
+  }
 });
+

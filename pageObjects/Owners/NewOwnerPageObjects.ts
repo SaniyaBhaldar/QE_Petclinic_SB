@@ -1,32 +1,67 @@
 import { ElementFinder, element, by, ElementArrayFinder } from "protractor";
+import appTestData from "../../testData/appTestData";
+import { globalPageObjects } from "../globalPageObjects";
 
+let globalObj = new globalPageObjects();
 
 export class NewOwnerPageObjects {
-    firstName: ElementFinder;
-    lastName: ElementFinder;
-    address: ElementFinder;
-    city: ElementFinder;
-    telephone: ElementFinder;
-    newOwnerTitle: ElementFinder;
-    addOwnerButton: ElementFinder;
-    firstNameTextField: ElementFinder;
-    lastNameTextField: ElementFinder;
-    addressTextField: ElementFinder;
-    cityTextField: ElementFinder;
-    telephoneTextField: ElementFinder;
 
-    constructor() {
-        this.newOwnerTitle= element(by.xpath("//*[contains(text(),'New Owner')]")); 
-        this.firstName = element(by.xpath("//*[contains(text(),'First Name')]"));
-        this.lastName = element(by.xpath("//*[contains(text(),'Last Name')]"));
-        this.address = element(by.xpath("//*[contains(text(),'Address')]"));
-        this.city = element(by.xpath("//*[contains(text(),'City')]"));
-        this.telephone = element(by.xpath("//*[contains(text(),'Telephone')]"));
-        this.firstNameTextField = element(by.xpath("//*[@id='firstName']"));
-        this.lastNameTextField = element(by.xpath("//*[@id='lastName']"));
-        this.addressTextField = element(by.xpath("//*[@id='address']"));
-        this.cityTextField = element(by.xpath("//*[@id='city']"));
-        this.telephoneTextField = element(by.xpath("//*[@id='telephone']"));
-        this.addOwnerButton = element(by.xpath("//*[contains(text(),'Add Owner')]"));
+    //  this.newOwnerTitle= element(by.xpath("//*[contains(text(),'New Owner')]")); 
+
+    private firstName = element(by.css("[for='firstName']"));
+    private lastName = element(by.css("[for='lastName']"));
+    private address = element(by.css("[for='address']"));
+    private city = element(by.css("[for='city']"));
+    private telephone = element(by.css("[for='telephone']"));
+    private firstNameTextField = element(by.id("firstName"));
+    private lastNameTextField = element(by.id("lastName"));
+    private addressTextField = element(by.id("address"));
+    private cityTextField = element(by.id("city"));
+    private telephoneTextField = element(by.id("telephone"));
+    private addOwnerButton = element(by.buttonText("Add Owner"));
+
+    getFirstNameText() {
+        return this.firstName.getText();
     }
+
+    getLastNameText() {
+        return this.lastName.getText();
+    }
+
+    getAddressText() {
+        return this.address.getText();
+    }
+
+    getCityText() {
+        return this.city.getText();
+    }
+
+    getTelephoneText() {
+        return this.telephone.getText();
+    }
+
+    sendKeyFirstName() {
+        return this.firstNameTextField.sendKeys(appTestData.appTestData.newOwnerData.FirstName);
+    }
+
+    sendKeyLastName() {
+        return this.lastNameTextField.sendKeys(appTestData.appTestData.newOwnerData.LastName);
+    }
+
+    sendKeyAddress() {
+        return this.addressTextField.sendKeys(appTestData.appTestData.newOwnerData.Address);
+    }
+
+    sendKeyCity() {
+        return this.cityTextField.sendKeys(appTestData.appTestData.newOwnerData.City);
+    }
+
+    sendKeyTelephone() {
+        return this.telephoneTextField.sendKeys(appTestData.appTestData.newOwnerData.Telephone);
+    }
+
+    clickAddOwnerButton(){
+        return this.addOwnerButton.click();
+    }
+
 }

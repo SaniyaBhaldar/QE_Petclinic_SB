@@ -1,5 +1,5 @@
 import { Given, When, Then } from "cucumber";
-import { OwnerListPageObjects } from "../../pageObjects/Owners/OwnerListPageObjects";
+import { globalPageObjects } from "../../pageObjects/globalPageObjects";
 
 
 const chai = require("chai").use(require("chai-as-promised"));
@@ -8,18 +8,15 @@ const expect = chai.expect;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(70 * 1000);
 
-let ownerListObj = new OwnerListPageObjects();
+let globalObj=new globalPageObjects();
 
 //Scenario 1 : Verify title of the page as 'Owners'
 
 Given('User is on Owners List page', async function () {
-    await ownerListObj.ownersListPageName.isDisplayed().then(async function (result) {
-        await expect(true).to.equal(result);
-    });
+        await expect(true).to.equal(globalObj.displayPageTitle());
 });
 
 Then('Owners page title should be displayed', async function () {
-    let pageTitle = await ownerListObj.ownersListPageName.getText();
-    await expect("Owners").to.equal(pageTitle);
+    await expect("Owners").to.equal(globalObj.getPageTitleText());
 });
 

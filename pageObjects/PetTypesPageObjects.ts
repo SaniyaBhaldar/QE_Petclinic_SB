@@ -1,12 +1,13 @@
-import { ElementFinder, element, by, ElementArrayFinder } from "protractor";
+import { ElementFinder, element, by, ElementArrayFinder, browser } from "protractor";
 
 export class PetTypesPageObjects {
-   
-    pageTitle: ElementFinder;
-
-    constructor() {
+ 
+       // private pageTitle=element(by.xpath("//*[@class='container xd-container']/h2"));
         
-        this.pageTitle=element(by.xpath("//*[@class='container xd-container']/h2"));
+       /* getPageTitle() {
+            browser.getTitle();
+        }*/
        
-    }
+
+    
 }
