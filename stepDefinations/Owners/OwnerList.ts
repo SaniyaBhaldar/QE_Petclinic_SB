@@ -13,10 +13,10 @@ let globalObj=new globalPageObjects();
 //Scenario 1 : Verify title of the page as 'Owners'
 
 Given('User is on Owners List page', async function () {
-        await expect(true).to.equal(globalObj.displayPageTitle());
+        await expect(true).to.equal(await globalObj.displayPageTitle());
 });
 
 Then('Owners page title should be displayed', async function () {
-    await expect("Owners").to.equal(globalObj.getPageTitleText());
+    await expect("Owners").to.equal(await globalObj.getPageTitleText());
 });
 

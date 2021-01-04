@@ -1,4 +1,6 @@
-import { ElementFinder, element, by, ElementArrayFinder, WebElement } from "protractor";
+import { ElementFinder, element, by, ElementArrayFinder, WebElement, browser, ExpectedConditions } from "protractor";
+
+var expCondition = ExpectedConditions;
 
 export class OwnerListPageObjects {
 
@@ -8,4 +10,7 @@ export class OwnerListPageObjects {
         this.ownerName.click();
     }
    
+    public async waitBrowser() {
+        await browser.wait(expCondition.presenceOf(this.ownerName), 10000);
+    }
 }    

@@ -18,6 +18,14 @@ export default {
             PetName: "George",
             PetBirthdate: "2010/01/20",
             PetType: "snake",
+        },
+
+        homePageLabels:{
+            homeTab: "HOME",
+            ownersTab: "OWNERS",
+            VetTab: "VETERINARIANS",
+            petTypesTab: "PET TYPES",
+            specialitiesTab: "SPECIALTIES",
         }
 
 

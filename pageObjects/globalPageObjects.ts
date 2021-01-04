@@ -1,6 +1,7 @@
 import { ElementFinder, element, by, ElementArrayFinder, browser, ExpectedConditions } from "protractor";
 import { logHelper } from "../util/logHelper";
 
+var expCondition = ExpectedConditions;
 
 export class globalPageObjects {
 
@@ -12,16 +13,15 @@ export class globalPageObjects {
     }
 
     async waitTillVisible(){
-        let ec = ExpectedConditions;
-        await browser.wait(ec.visibilityOf(this.responseList), 20000, 'Taking too long to load');
+        await browser.wait(expCondition.visibilityOf(this.responseList), 20000, 'Taking too long to load');
     }
 
-    getPageTitleText() {
-        return this.pageTitle.getText();
+    async getPageTitleText() {
+        return await this.pageTitle.getText();
     }
 
-    displayPageTitle() {
-        var displayPageTitle = this.pageTitle.isDisplayed();
+    async displayPageTitle() {
+        var displayPageTitle = await this.pageTitle.isDisplayed();
         return displayPageTitle;
         
     }
@@ -32,10 +32,10 @@ export class globalPageObjects {
 
     async getLastEntryNewListDetails(){
         let lastRowEntry = this.responseList.all(by.tagName("tr")).last();
-        browser.executeScript('window.scrollBy(0,1000)');
+        browser.executeScript('window.scrollBy(0,1500)');
         let newEntryDetails = await lastRowEntry.getText();
         logHelper.Log().debug("NewLastEntryDetails: " + newEntryDetails);
-
+        return newEntryDetails;
     }
 
     getEntryCount(){

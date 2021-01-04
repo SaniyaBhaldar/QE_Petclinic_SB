@@ -18,6 +18,6 @@ When('User clicks on PetTypes tab', async function () {
 });
 
 Then('Pet Types title should be displayed', async function () {
-    await expect("Pet Types").to.equal(globalObj.getPageTitleText());
+    await expect("Pet Types").to.equal(await globalObj.getPageTitleText());
 });
 

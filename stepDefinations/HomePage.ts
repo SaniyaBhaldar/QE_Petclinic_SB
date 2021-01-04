@@ -19,24 +19,24 @@ Given('User will navigate to Petclinic url', async function () {
 });
 
 Then('User should able to see Welcome to Petclinic message', async function () {
-    await expect(true).to.equal(homeObj.displayWelcomeMsg());
+    await expect(true).to.equal(await homeObj.displayWelcomeMsg());
 
 });
 Then('User should able to see title of the webpage', async function () {
-    await expect("SpringPetclinicAngular").to.equal(globalObj.getPageTitleText());
+    await expect("SpringPetclinicAngular").to.equal(await homeObj.getPageTitle());
 });
 
 //Scenario 2 : Verify User able to see Five menus on homepage
 
 Given('User is on Petclinic home page', async function () { 
-        await expect(true).to.equal(homeObj.displayWelcomeMsg());
+        await expect("Welcome").to.equal(await globalObj.getPageTitleText());
 });
 
 Then('Five menus should be displayed as Home Owners Veterinarians Pet Types and Specialties', async function () {
-    await expect("HOME").to.equal(homeObj.getHomeMenuText);
-    await expect("OWNERS").to.equal(homeObj.getOwnersText);
-    await expect("VETERINARIANS").to.equal(homeObj.getVeterinariansText);
-    await expect("PET TYPES").to.equal(homeObj.getPetTypesText);
-    await expect("SPECIALTIES").to.equal(homeObj.getSpecialtiesText);
+    await expect(appTestData.appTestData.homePageLabels.homeTab).to.equal(await homeObj.getHomeMenuText());
+    await expect(appTestData.appTestData.homePageLabels.ownersTab).to.equal(await homeObj.getOwnersText());
+    await expect(appTestData.appTestData.homePageLabels.VetTab).to.equal(await homeObj.getVeterinariansText());
+    await expect(appTestData.appTestData.homePageLabels.petTypesTab).to.equal(await homeObj.getPetTypesText());
+    await expect(appTestData.appTestData.homePageLabels.specialitiesTab).to.equal(await homeObj.getSpecialtiesText());
 });
 

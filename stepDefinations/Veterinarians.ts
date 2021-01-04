@@ -25,17 +25,17 @@ When('User clicks on All veterinarians option', async function () {
 });
 
 Then('Veterinarians page title should be displayed', async function () {
-    await expect(true).to.equal(globalObj.displayPageTitle());
+    await expect(true).to.equal(await globalObj.displayPageTitle());
 });
 
 //Scenario 2 : Verify count of radiology veterinarians on 'veterinarians' page
 
 Given('User is on veterinarians list page', async function () {
-    logHelper.Log().debug("Page title is: " + globalObj.getPageTitleText());
-    await expect("Veterinarians").to.equal(globalObj.getPageTitleText());
+    logHelper.Log().debug("Page title is: " + await globalObj.getPageTitleText());
+    await expect("Veterinarians").to.equal(await globalObj.getPageTitleText());
 });
 
 Then('Radiology veterinarians should be displayed with exact count', async function () {
-    await expect(4).to.equal(veterinariansObj.getRadiologyCount());
+    await expect(5).to.equal(await veterinariansObj.getRadiologyCount());
 });
 

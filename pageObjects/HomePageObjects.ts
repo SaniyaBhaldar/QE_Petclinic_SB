@@ -1,14 +1,10 @@
+import { ElementFinder, element, by, ElementArrayFinder, browser, ExpectedConditions } from "protractor";
 
-
-
-import { ElementFinder, element, by, ElementArrayFinder, browser } from "protractor";
-
-
+var expCondition = ExpectedConditions;
 
 export class HomePageObjects {
-
     private welcomeMsg = element(by.css("app-welcome h1"));
-    private homeMenu = element(by.css("ul.navbar-nav .glyphicon-home"));
+    private homeMenu = element(by.css("[ng-reflect-router-link='welcome']"));
     private owners = element(by.css("ul.navbar-nav li.dropdown:nth-child(2)"));
     private veterinarians = element(by.css("ul.navbar-nav li.dropdown:nth-child(3)"));
     private petTypes = element(by.css("[href='/petclinic/pettypes']"));
@@ -18,30 +14,34 @@ export class HomePageObjects {
 
     //HomeMenu: ElementFinder; public static ***
 
-    openBrowser(url: string) {
+    public openBrowser(url: string) {
         browser.get(url);
+        browser.wait(expCondition.presenceOf(this.welcomeMsg), 10000);
     }
 
-    displayWelcomeMsg() {
-        var welMsg = this.welcomeMsg.isDisplayed();
-        return welMsg;
+    public async getPageTitle() {
+       return await browser.getTitle();
     }
 
-    getHomeMenuText() {
-        return this.homeMenu.getText();
+    public async displayWelcomeMsg() {
+        return await this.welcomeMsg.isDisplayed();
     }
 
-    getOwnersText() {
-        return this.owners.getText();
+    public async getHomeMenuText() {
+        return await this.homeMenu.getText();
     }
-    getVeterinariansText() {
-        return this.veterinarians.getText();
+
+    public async getOwnersText() {
+        return await this.owners.getText();
     }
-    getPetTypesText() {
-        return this.petTypes.getText();
+    public async getVeterinariansText() {
+        return await this.veterinarians.getText();
     }
-    getSpecialtiesText() {
-        return this.specialties.getText();
+    public async getPetTypesText() {
+        return await this.petTypes.getText();
+    }
+    async getSpecialtiesText() {
+        return await this.specialties.getText();
     }
 
     clickOwnersMenu(){

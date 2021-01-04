@@ -28,17 +28,17 @@ export class ViewOwnerPageObjects {
         }
     }
 
-    getPetsVisitsTitleText() {
-        return this.petsVisitsTitle.getText();
+    async getPetsVisitsTitleText() {
+        return await this.petsVisitsTitle.getText();
     }
-    getPetNameText() {
-        return this.petName.getText();
+    async getPetNameText() {
+        return await this.petName.getText();
     }
-    getPetBirthdateText() {
-        return this.petBirthdate.getText();
+    async getPetBirthdateText() {
+        return await this.petBirthdate.getText();
     }
-    getPetTypeText() {
-        return this.petType.getText();
+    async getPetTypeText() {
+        return await this.petType.getText();
     }
 
 

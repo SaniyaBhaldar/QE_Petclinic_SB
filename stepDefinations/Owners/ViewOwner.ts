@@ -23,29 +23,29 @@ let globalObj = new globalPageObjects();
 
 When('User clicks on Peter owner', async function () {
     //ownerListObj.clickOwnerName();  direct clicks on Peter
-    viewOwnerObj.ClickOwner();
+    await viewOwnerObj.ClickOwner();
 });
 
 Then('User should be navigate on Owners information page', async function () {
-    await expect(true).to.equal(globalObj.displayPageTitle());
+    await expect(true).to.equal(await globalObj.displayPageTitle());
 });
 
 Then('Able to see Pets and Visits title', async function () {
-    await expect("Pets and Visits").to.equal(viewOwnerObj.getPetsVisitsTitleText());
+    await expect("Pets and Visits").to.equal(await viewOwnerObj.getPetsVisitsTitleText());
 });
 
 
 //Scenario 2 : Verify user pet details (Name, Birthdate, Type) on owner information page
 
 Given('User is on Owners Information page', async function () {
-    await expect(true).to.equal(globalObj.displayPageTitle());
+    await expect(true).to.equal(await globalObj.displayPageTitle());
 });
 
 Then('User pet details Name, Birthdate, Type should displayed', async function () {
 
-    await expect(appTestData.appTestData.petDetails.PetName).to.equal(viewOwnerObj.getPetNameText());
-    await expect(appTestData.appTestData.petDetails.PetBirthdate).to.equal(viewOwnerObj.getPetBirthdateText());
-    await expect(appTestData.appTestData.petDetails.PetType).to.equal(viewOwnerObj.getPetTypeText());
+    await expect(appTestData.appTestData.petDetails.PetName).to.equal(await viewOwnerObj.getPetNameText());
+    await expect(appTestData.appTestData.petDetails.PetBirthdate).to.equal(await viewOwnerObj.getPetBirthdateText());
+    await expect(appTestData.appTestData.petDetails.PetType).to.equal(await viewOwnerObj.getPetTypeText());
 
 });
 

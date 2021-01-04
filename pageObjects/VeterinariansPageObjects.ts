@@ -13,6 +13,7 @@ export class VeterinariansPageObjects {
     async getRadiologyCount(){
         let count = ((await globalObj.getResponseListText()).match(/radiology/g)).length;
         logHelper.Log().debug("Count:" + count);
+        return count;
     }
    
    

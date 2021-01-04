@@ -20,24 +20,24 @@ export class NewOwnerPageObjects {
     private telephoneTextField = element(by.id("telephone"));
     private addOwnerButton = element(by.buttonText("Add Owner"));
 
-    getFirstNameText() {
-        return this.firstName.getText();
+    async getFirstNameText() {
+        return await this.firstName.getText();
     }
 
-    getLastNameText() {
-        return this.lastName.getText();
+    async getLastNameText() {
+        return await this.lastName.getText();
     }
 
-    getAddressText() {
-        return this.address.getText();
+    async getAddressText() {
+        return await this.address.getText();
     }
 
-    getCityText() {
-        return this.city.getText();
+    async getCityText() {
+        return await this.city.getText();
     }
 
-    getTelephoneText() {
-        return this.telephone.getText();
+    async getTelephoneText() {
+        return await this.telephone.getText();
     }
 
     sendKeyFirstName() {
